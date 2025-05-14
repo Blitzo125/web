@@ -4,6 +4,6 @@ draft: false
 tags:
 ---
 
-[[My information]]
+[[My information]].
 Introduction to my awesomeness goes here.
  
