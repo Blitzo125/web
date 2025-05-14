@@ -1,6 +1,5 @@
 ---
-title: Welcome to Quartz
+title: Aditya gajraj
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+This is a Aaditya's blog.
