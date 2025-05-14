@@ -7,6 +7,7 @@ longform:
   scenes:
     - Introduction
     - My information
+    - Try
   sceneTemplate: templates/format.md
   ignoredFiles: []
 ---

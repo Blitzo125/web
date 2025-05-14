@@ -1,5 +1,5 @@
 ---
-title: <% tp.file.title %>
+title: Advanced
 draft: false
 tags:
 ---
