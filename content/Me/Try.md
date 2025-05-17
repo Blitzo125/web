@@ -1,6 +1,6 @@
 ---
 title: Try
-draft: true
+draft: false
 tags:
 ---
 
