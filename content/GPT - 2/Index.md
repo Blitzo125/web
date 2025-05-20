@@ -4,7 +4,8 @@ longform:
   title: GPT - 2
   workflow: Default Workflow
   sceneFolder: /
-  scenes: []
+  scenes:
+    - backpropegration
   sceneTemplate: templates/format.md
   ignoredFiles: []
 ---
