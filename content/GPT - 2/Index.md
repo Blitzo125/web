@@ -5,7 +5,8 @@ longform:
   workflow: Default Workflow
   sceneFolder: /
   scenes:
-    - backpropegration
+    - Neural Networks
+    - to write
   sceneTemplate: templates/format.md
   ignoredFiles: []
 ---
