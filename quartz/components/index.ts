@@ -33,6 +33,7 @@ export {
   ContentMeta,
   Spacer,
   TableOfContents,
+  Explorer,
   TagList,
   Backlinks,
   Search,
