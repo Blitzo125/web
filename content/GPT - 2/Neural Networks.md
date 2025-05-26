@@ -1,5 +1,5 @@
 ---
-title: Advanced
+title: Neural Nerworks
 draft: false
 tags:
 ---
