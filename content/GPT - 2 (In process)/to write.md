@@ -8,5 +8,6 @@ non linearlity and its use
 forward pass and backward pass
 tesor
 
-see the git repo of backpropagation
-learning rate decay
+in progress of gpt 2 
+
+
