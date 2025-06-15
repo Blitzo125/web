@@ -7,7 +7,7 @@ I am a first-year electrical and computer engineering student at Shiv Nadar Uni
 
 Phone no -> +91 9950080810
 
-Mail -> aadityagajraj8@gmail.com
+<p>Mail → <a href="mailto:aadityagajraj8@gmail.com">aadityagajraj8@gmail.com</a></p>
 
 [Github](https://github.com/Blitzo125)
 
