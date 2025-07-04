@@ -14,10 +14,12 @@ I used a dataset tiny Shakespeare and took first 50000 characters and merged on 
 i converted the text to list of token id using UTF - 8 encoding
 
 I made pairs of consecutive tokens and then counted there frequencies then replaced the top 10 most frequent tokes with new tokens starting from 256 (0-255 are ASCII bytes) for 500 iteration
-after training this i got the following 
+after training this i got the following
 
 Number of characters in tiny Shakespeare: 1115394 characters                                      
 Total UTF-8 tokens in tiny Shakespeare : 1115394                                                             
 Total number of tokens after Byte Pair encoding: 386452                                                
 Overall compression: 65.4%                                                                                                  
 Vocabulary range: 0 to 3348                                                                                                 
+
+You can try it [Here](https://blitzo125.github.io/Tokenizer-webpage/)
