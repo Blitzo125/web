@@ -5,7 +5,7 @@ tags:
 ---
  
 strings are sequences of unicode code points (unicode is a standard which defines what integers represent what character) Unicode text is processed and stored as binary data using encoding which translate the code points into sequences of bytes which the computer can understand and store in memory
-the one used here is UTF - 8 because its variable length encoding unlike UTF - 32 and its backwards compatible (older encoding like ASCII works correctly using UTF - 8)
+the one used here is UTF - 8 (UTF-8 encodes code points in one to four bytes) because its variable length encoding unlike UTF - 32 and its backwards compatible (older encoding like ASCII works correctly using UTF - 8)
 
 [Github](https://github.com/Blitzo125/Tokenizer)
 
@@ -22,4 +22,5 @@ Total number of tokens after Byte Pair encoding: 386452
 Overall compression: 65.4%                                                                                                  
 Vocabulary range: 0 to 3348                                                                                                 
 
-You can try it [Here](https://blitzo125.github.io/Tokenizer-webpage/)
+After that using Cursor assistant i made it a webpage and hosted it using github pages                                                                                                                                        
+You can try it [Here](https://blitzo125.github.io/Tokenizer-web/)
