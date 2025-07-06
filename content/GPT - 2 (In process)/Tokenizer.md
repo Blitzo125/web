@@ -4,23 +4,48 @@ draft: false
 tags:
 ---
  
-strings are sequences of unicode code points (unicode is a standard which defines what integers represent what character) Unicode text is processed and stored as binary data using encoding which translate the code points into sequences of bytes which the computer can understand and store in memory
-the one used here is UTF - 8 (UTF-8 encodes code points in one to four bytes) because its variable length encoding unlike UTF - 32 and its backwards compatible (older encoding like ASCII works correctly using UTF - 8)
+Tokenizer converts text into tokens, which are understood by the machine and so that it can find patterns 
+
+A simple tokenizer and why it matters.
+
+Tokenization is the process of converting a sequence of text into smaller parts, known as tokens. These tokens can be single characters or even words; it break down vast stretches of text into more digestible and understandable units for machines For example, token 700 is ' then' in a Tokenizer trained on the Tiny Shakespeare dataset
+Machines understand human language by breaking it down into bite-sized pieces, which is done by a Tokenizer
+
+UTF-8 (Unicode Transformation Format – 8-bit) is a standard for encoding text in computers. It allows you to represent any character in the Unicode standard using one or more bytes.
+
+So by using Byte-pair encoding, which is just replacing the most common pair of two consecutive tokens with a new token 
+
+E.g. take aaabdaaabac
+
+The byte pair "aa" occurs most often, so it will be replaced by a byte that is not used in the data, such as "Z". Now, there is the following data and replacement table:
+
+ZabdZabac
+Z=aa
+
+Then the process is repeated with the byte pair "ab", replacing it with "Y":
+
+ZYdZYac
+Y=ab
+Z=aa
+
+The only literal byte pair left occurs only once, and the encoding might stop here. Alternatively, the process could continue with recursive byte-pair encoding, replacing "ZY" with "X":
+
+XdXac
+X=ZY
+Y=ab
+Z=aa
+
+So in this example, the original string aaabdaaabac had 11 characters, each treated as a separate token initially. After applying Byte Pair Encoding, it was reduced to just 5 tokens, showing how BPE compresses the input by merging frequent patterns.
+
+We want to decrease the number of tokens per sentence, as Language models have token limits
+So if we have fewer tokens per sentence, we can fit more content into the model, and as there are fewer tokens, there is faster processing for any text.
+
+What I did was convert the tiny Shakespeare dataset into tokens using UTF-8 encoding, and then, using byte-pair encoding, I took the top 10 most frequent token pairs and replaced them with new tokens, through which the number of tokens that were 256 (ASCII) became 3349.
+
+The result was tiny Shakespeare, which has 1,115,394 characters, was turned into 386,452 tokens after using replacing the old tokens with merged tokens
+
+After that, using the Cursor assistant, I made it a webpage and hosted it using GitHub Pages                                                                                                                                        
+You can try it [Here](https://blitzo125.github.io/Tokenizer-web/)
 
 [Github](https://github.com/Blitzo125/Tokenizer)
-
-I used UTF - 8 encoding and used [Byte Pair encoding](https://en.wikipedia.org/wiki/Byte-pair_encoding) which takes the two most frequent pairs of tokens and replaces them with a new token thus compressing the data so the we can have more data using less number of tokens
-I used a dataset tiny Shakespeare and took first 50000 characters and merged on that 500 times
-i converted the text to list of token id using UTF - 8 encoding
-
-I made pairs of consecutive tokens and then counted there frequencies then replaced the top 10 most frequent tokes with new tokens starting from 256 (0-255 are ASCII bytes) for 500 iteration
-after training this i got the following
-
-Number of characters in tiny Shakespeare: 1115394 characters                                      
-Total UTF-8 tokens in tiny Shakespeare : 1115394                                                             
-Total number of tokens after Byte Pair encoding: 386452                                                
-Overall compression: 65.4%                                                                                                  
-Vocabulary range: 0 to 3348                                                                                                 
-
-After that using Cursor assistant i made it a webpage and hosted it using github pages                                                                                                                                        
-You can try it [Here](https://blitzo125.github.io/Tokenizer-web/)
+[Byte Pair encoding](https://en.wikipedia.org/wiki/Byte-pair_encoding)
